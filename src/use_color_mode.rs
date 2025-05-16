@@ -201,6 +201,7 @@ where
         }
     }
 
+    println!("preferred_dark: after initial_value_from_url");
     let (store, set_store) = get_store_signal(
         initial_value_from_url.clone().unwrap_or(initial_value),
         storage_signal,
@@ -209,9 +210,9 @@ where
         storage,
         listen_to_storage_changes,
     );
-
+    println!("preferred_dark: after store");
     let (cookie, set_cookie) = get_cookie_signal(&cookie_name, cookie_enabled);
- 
+    println!("preferred_dark: after cookie");
     if cookie_enabled {
         let _ = sync_signal_with_options(
             (cookie, set_cookie),
