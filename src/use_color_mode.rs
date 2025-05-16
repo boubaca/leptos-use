@@ -172,7 +172,7 @@ where
         ssr_color_header_getter,
         _marker,
     } = options;
-
+    println!("preferred_dark: before preferededark");
     let modes: Vec<String> = custom_modes
         .into_iter()
         .chain(vec![
@@ -184,7 +184,7 @@ where
     let preferred_dark = use_preferred_dark_with_options(UsePreferredDarkOptions {
         ssr_color_header_getter,
     });
-
+    println!("preferred_dark: before system");
     let system = Signal::derive(move || {
         if preferred_dark.get() {
             ColorMode::Dark
@@ -192,6 +192,7 @@ where
             ColorMode::Light
         }
     });
+    println!("preferred_dark: after system");
 
     let mut initial_value_from_url = None;
     if let Some(param) = initial_value_from_url_param.as_ref() {
@@ -208,11 +209,9 @@ where
         storage,
         listen_to_storage_changes,
     );
-    
-    println!("Debuging before setting cookie:");
 
     let (cookie, set_cookie) = get_cookie_signal(&cookie_name, cookie_enabled);
-    println!("Debuging after setting cookie:");
+ 
     if cookie_enabled {
         let _ = sync_signal_with_options(
             (cookie, set_cookie),
