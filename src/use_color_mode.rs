@@ -208,9 +208,11 @@ where
         storage,
         listen_to_storage_changes,
     );
+    
+    println!("Debuging before setting cookie:");
 
     let (cookie, set_cookie) = get_cookie_signal(&cookie_name, cookie_enabled);
-
+    println!("Debuging after setting cookie:");
     if cookie_enabled {
         let _ = sync_signal_with_options(
             (cookie, set_cookie),
