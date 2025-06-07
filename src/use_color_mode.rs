@@ -143,7 +143,10 @@ use wasm_bindgen::JsCast;
 /// * [`fn@crate::storage::use_storage`]
 /// * [`fn@crate::use_cookie`]
 pub fn use_color_mode() -> UseColorModeReturn {
-    use_color_mode_with_options(UseColorModeOptions::default())
+    println!("Debuging before use_color_mode: 1");
+    let val = use_color_mode_with_options(UseColorModeOptions::default());
+    println!("Debuging after use_color_mode: 67");
+    val
 }
 
 /// Version of [`use_color_mode`] that takes a `UseColorModeOptions`. See [`use_color_mode`] for how to use.
@@ -153,7 +156,7 @@ where
     M: ?Sized,
 {
     println!("Debuging before use_color_mode_with_options:");
-    
+
     let UseColorModeOptions {
         target,
         attribute,
@@ -174,7 +177,7 @@ where
         ssr_color_header_getter,
         _marker,
     } = options;
-    
+
     println!("Debuging after use_color_mode_with_options:");
 
     let modes: Vec<String> = custom_modes
