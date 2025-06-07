@@ -152,6 +152,8 @@ where
     El: IntoElementMaybeSignal<web_sys::Element, M>,
     M: ?Sized,
 {
+    println!("Debuging before use_color_mode_with_options:");
+    
     let UseColorModeOptions {
         target,
         attribute,
@@ -172,6 +174,8 @@ where
         ssr_color_header_getter,
         _marker,
     } = options;
+    
+    println!("Debuging after use_color_mode_with_options:");
 
     let modes: Vec<String> = custom_modes
         .into_iter()
