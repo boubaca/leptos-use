@@ -249,7 +249,7 @@ where
     let state = Signal::derive(move || {
         let value = store.get_untracked();
         if value == ColorMode::Auto {
-            system.get()
+            system.get_untracked()
         } else {
             value
         }
@@ -315,7 +315,7 @@ where
         let on_changed = on_changed.clone();
 
         move |_| {
-            on_changed.clone()(state.get());
+            on_changed.clone()(state.get_untracked());
         }
     });
 
@@ -349,6 +349,7 @@ fn get_cookie_signal(
     cookie_name: &str,
     cookie_enabled: bool,
 ) -> (Signal<Option<ColorMode>>, WriteSignal<Option<ColorMode>>) {
+    println!("Debuging before get_cookie_signal:");
     if cookie_enabled {
         use_cookie_with_options::<ColorMode, FromToStringCodec>(
             cookie_name,
