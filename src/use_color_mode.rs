@@ -251,7 +251,7 @@ where
             value
         }
     });
-
+    println!("Debuging after setting state:");
     let target = target.into_element_maybe_signal();
 
     let update_html_attrs = {
