@@ -25,9 +25,9 @@ http1 = { version = "1", optional = true, package = "http" }
 http0_2 = { version = "0.2", optional = true, package = "http" }
 js-sys = "0.3"
 lazy_static = "1"
-leptos = {git = "https://github.com/boubaca/leptos" , rev = "78f59c276a87dd5a82ea84106983f3a7fe9314d2"}
-leptos_axum = { git = "https://github.com/boubaca/leptos", rev = "78f59c276a87dd5a82ea84106983f3a7fe9314d2", default-features = false, optional = true }
-leptos_actix = { git = "https://github.com/boubaca/leptos", rev = "78f59c276a87dd5a82ea84106983f3a7fe9314d2", default-features = false, optional = true }
+leptos = {git = "https://github.com/boubaca/leptos" , rev = "80c1b4faad9e014f9a57e5172b99b7a6ab3c0330"}
+leptos_axum = { git = "https://github.com/boubaca/leptos", rev = "80c1b4faad9e014f9a57e5172b99b7a6ab3c0330", default-features = false, optional = true }
+leptos_actix = { git = "https://github.com/boubaca/leptos", rev = "80c1b4faad9e014f9a57e5172b99b7a6ab3c0330", default-features = false, optional = true }
 num = { version = "0.4", optional = true }
 paste = "1"
 send_wrapper = "0.6"
