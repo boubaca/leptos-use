@@ -299,7 +299,7 @@ where
             }
         }
     };
-
+    println!("Debuging after setting update_html_attrs:");
     let default_on_changed = move |mode: ColorMode| {
         update_html_attrs(target, attribute.clone(), mode);
     };
@@ -321,7 +321,7 @@ where
     });
 
     let mode = Signal::derive(move || if emit_auto { store.get() } else { state.get() });
-
+    println!("Debuging after setting mode: 3");
     UseColorModeReturn {
         mode,
         set_mode: set_store,
