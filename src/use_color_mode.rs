@@ -247,7 +247,7 @@ where
     }
 
     let state = Signal::derive(move || {
-        let value = store.get();
+        let value = store.get_untracked();
         if value == ColorMode::Auto {
             system.get()
         } else {
